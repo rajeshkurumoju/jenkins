@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git clone') {
+            steps {
+                git branch: 'main', url: 'https://github.com/rajeshkurumoju/my--terraform_tracking_day1-to-day12.git'
+            }
+        }
+         stage('init') {
+            steps {
+               dir('day-2') {
+                 sh 'terraform init'
+              }
+            }
+        }
+         stage('plan') {
+            steps {
+              dir('day-2') {
+                sh 'terraform plan'
+              }
+           }
+        }
+         stage('apply') {
+            steps {
+              dir('day-2') {
+                sh 'terraform ${action} -auto-approve'
+              }
+           }
+       }
+   }
+}
