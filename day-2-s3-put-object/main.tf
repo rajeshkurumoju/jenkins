@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "raj" {
 }
 
 resource "aws_s3_bucket_object" "raj" {
-    bucket = aws_s3_bucket.raj.id
+    bucket = aws_s3_bucket.raj.bucket
     key = "PHOTO.JPG"
   source = "C:/Users/kurum/Downloads/PHOTO.JPG"
 }
