@@ -9,4 +9,5 @@ resource "aws_instance" "raj" {
   tags = {
     Name = "raj-kumar"
   }
+  user_data = file("test.sh")
 }
