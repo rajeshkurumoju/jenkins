@@ -11,3 +11,8 @@ resource "aws_instance" "raj" {
   }
   user_data = file("test.sh")
 }
+
+resource "aws_s3_bucket" "luv" {
+  bucket = "drdrtttr"
+  
+}
